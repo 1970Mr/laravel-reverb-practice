@@ -17,7 +17,7 @@ class ReactionReceived implements ShouldBroadcast
     /**
      * Create a new event instance.
      */
-    public function __construct(public readonly string $emoji)
+    public function __construct(public readonly string $emoji, public readonly string $id)
     {
     }
 

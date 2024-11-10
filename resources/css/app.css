@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.reaction {
+    position: absolute;
+    font-size: 3rem;
+    opacity: 1;
+    display: block;
+    transition: transform 1s ease-out, opacity 1s ease-out;
+    animation: moveUpAndFade 1s forwards;
+}
+
+@keyframes moveUpAndFade {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-3rem);
+        opacity: 0;
+    }
+}
+

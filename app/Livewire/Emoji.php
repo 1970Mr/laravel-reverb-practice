@@ -4,7 +4,6 @@ namespace App\Livewire;
 
 use App\Events\ReactionReceived;
 use Illuminate\View\View;
-use Livewire\Attributes\Title;
 use Livewire\Component;
 
 class Emoji extends Component
@@ -14,8 +13,8 @@ class Emoji extends Component
         return view('livewire.emoji')->layout('layouts.app');
     }
 
-    public function sendReaction($emoji): void
+    public function sendReaction($emoji, $id): void
     {
-        ReactionReceived::dispatch($emoji);
+        ReactionReceived::dispatch($emoji, $id);
     }
 }
