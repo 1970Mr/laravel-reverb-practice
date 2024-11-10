@@ -29,7 +29,7 @@ class ReactionReceived implements ShouldBroadcast
     public function broadcastOn(): array
     {
         return [
-            new Channel('emoji-reaction'),
+            new Channel('emoji-reactions'),
         ];
     }
 }

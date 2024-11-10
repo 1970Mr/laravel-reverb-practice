@@ -1,7 +1,6 @@
 import './bootstrap';
 
-// Listen for ReactionReceived event
-Echo.channel('emoji-reaction')
+Echo.channel('emoji-reactions')
     .listen('ReactionReceived', (e) => {
         showReactionAnimation(e.emoji, e.id);
     });
@@ -13,15 +12,11 @@ function showReactionAnimation(emoji, id) {
     reactionElement.classList.add('reaction');
     reactionElement.innerText = emoji;
 
-    reactionElement.style.bottom = '5rem';
+    reactionElement.style.bottom = '2rem';
 
     container.appendChild(reactionElement);
+
+    reactionElement.addEventListener('animationend', () => {
+        reactionElement.remove();
+    });
 }
-
-// setTimeout(() => {
-//     reactionElement.remove();
-// }, 1500);
-
-// reactionElement.addEventListener('animationend', () => {
-//     reactionElement.remove();
-// });

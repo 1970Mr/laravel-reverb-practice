@@ -6,9 +6,8 @@
     position: absolute;
     font-size: 3rem;
     opacity: 1;
-    display: block;
     transition: transform 1s ease-out, opacity 1s ease-out;
-    animation: moveUpAndFade 1s forwards;
+    animation: moveUpAndFade 1s ease-out;
 }
 
 @keyframes moveUpAndFade {
@@ -17,7 +16,7 @@
         opacity: 1;
     }
     100% {
-        transform: translateY(-3rem);
+        transform: translateY(-10rem);
         opacity: 0;
     }
 }
